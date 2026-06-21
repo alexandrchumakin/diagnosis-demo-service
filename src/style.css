@@ -66,9 +66,9 @@ select {
 .hero::after {
   content: "E2E";
   position: absolute;
-  top: 22px;
-  right: -20px;
-  font-size: clamp(6rem, 16vw, 12rem);
+  top: 52px;
+  right: 54px;
+  font-size: clamp(5rem, 12vw, 9.2rem);
   font-weight: 900;
   line-height: 1;
   letter-spacing: -0.12em;
@@ -92,9 +92,11 @@ p {
 
 h1 {
   margin-bottom: 22px;
-  font-size: clamp(3.4rem, 7vw, 6.4rem);
-  line-height: 0.88;
-  letter-spacing: -0.08em;
+  max-width: 8ch;
+  font-size: clamp(3rem, 6vw, 5.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+  overflow-wrap: normal;
 }
 
 h2 {
@@ -201,7 +203,25 @@ button {
     padding: 32px;
   }
 
+  .hero::after {
+    top: 42px;
+    right: 34px;
+    font-size: clamp(4.4rem, 24vw, 7rem);
+  }
+
+  h1 {
+    max-width: 9ch;
+    font-size: clamp(3.2rem, 15vw, 5.6rem);
+  }
+
   .panel {
     padding: 28px;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1080px) {
+  h1 {
+    max-width: 9ch;
+    font-size: clamp(3.4rem, 9vw, 5.1rem);
   }
 }

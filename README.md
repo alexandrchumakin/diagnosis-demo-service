@@ -14,6 +14,8 @@ docker compose up --build
 
 Open http://localhost:4173.
 
+IntelliJ IDEA users can run the shared `Start checkout UI (Docker Compose)` run configuration. It executes `npm run start:docker`, which runs `docker compose up --build`.
+
 ## GitHub Setup
 
 1. Create a public GitHub repo named `diagnosis-demo-service`.

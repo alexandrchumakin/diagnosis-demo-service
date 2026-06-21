@@ -4,3 +4,7 @@ dist
 .DS_Store
 *.log
 *.tsbuildinfo
+!.idea/
+.idea/*
+!.idea/runConfigurations/
+!.idea/runConfigurations/*.xml
