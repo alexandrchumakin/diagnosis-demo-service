@@ -1,0 +1,26 @@
+name: E2E with AI diagnosis
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  checks: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  checkout-e2e:
+    name: Playwright E2E + AI diagnosis
+    uses: alexandrchumakin/diagnosis-demo-e2e/.github/workflows/run-e2e.yml@main
+    with:
+      service_repository: ${{ github.repository }}
+      service_ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      service_base_ref: ${{ github.event.pull_request.base.sha || '' }}
+      openai_model: ${{ vars.OPENAI_MODEL || 'gpt-5.5' }}
+      comment_on_pr: true
+    secrets:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
