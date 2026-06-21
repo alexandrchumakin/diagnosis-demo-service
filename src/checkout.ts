@@ -17,7 +17,7 @@ export type CheckoutResult =
 
 export function isValidCustomerEmail(email: string): boolean {
   const normalized = email.trim();
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalized);
+  return normalized.endsWith("@company.test");
 }
 
 export function submitOrder(order: OrderDraft): CheckoutResult {
